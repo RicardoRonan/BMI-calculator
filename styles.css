@@ -78,4 +78,7 @@ input {
     margin: 5px;
     height: fit-content;
   }
+  #card {
+    margin: 5px;
+  }
 }
