@@ -9,20 +9,20 @@ body {
   background-color: rgb(13, 235, 135);
 }
 
-.container {
+.container-fluid {
   display: flex !important;
   justify-content: center !important;
   background-color: rgb(13, 235, 135);
 }
 #card {
   width: 40rem;
-  height: 30rem;
+  height: fit-content;
   border: 1px solid grey;
   background-color: #00d497;
 }
 #card-1 {
   width: 20rem;
-  height: 30rem;
+  height: fit-content;
   background-color: #00d497;
   border: 1px solid grey;
   word-break: break-all;
@@ -68,4 +68,14 @@ input {
 }
 .card-body {
   padding: 10px;
+}
+@media only screen and (max-width: 570px) {
+  .container-fluid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #card-1 {
+    margin: 5px;
+    height: fit-content;
+  }
 }
