@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,39 +12,49 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="styles.css" />
-  </head>
+</head>
 
-  <body class="">
-    <h1 class="text-center p-5">BMI Calculator</h1>
-    <div class="container-fluid">
-      <div id="card-1" class="card shadow p-3 mx-2">
-          <div id="card-body" class="card-body">
-            <h2>What does my </h2>
-            <h2>BMI mean?</h2>
-            <p>The body mass index (BMI) is a measure that uses your height and weight to work out if your weight is healthy. The BMI calculation divides an adult's weight in kilograms by their height in metres squared.</p>
-          </div>
-      </div>
-      <div id="card" class="card shadow p-3">
-        <div class="card-body">
-          <p class="m-3">Height (in centimeters)</p>
-
-          <input class="m-2 form-control" type="number" id="height" />
-
-          <p class="m-3">Weight (in kilograms)</p>
-
-          <input class="m-2 form-control" type="number" id="weight" />
-
-          <div class="btn-container">
-            <button class="btn m-2" id="btn">Calculate</button>
-
-            <div id="result">Your BMI will show up here!
-            
+<body>
+    <main class="container">
+        <section id="calculator" class="card shadow p-4">
+            <h1 class="text-center mb-4">BMI Calculator</h1>
+            <div class="mb-3">
+                <label for="height" class="form-label">Height (in centimeters)</label>
+                <input type="number" class="form-control" id="height" placeholder="Enter height">
             </div>
-          </div>
-        </div>
-      </div>
-    
-  </body>
+            <div class="mb-3">
+                <label for="weight" class="form-label">Weight (in kilograms)</label>
+                <input type="number" class="form-control" id="weight" placeholder="Enter weight">
+            </div>
+            <button id="btn" class="btn btn-primary w-100">Calculate</button>
+            <div id="result" class="mt-4 text-center">
+                Your BMI will show up here!
+            </div>
+        </section>
+
+        <section id="info" class="card shadow p-4 mt-4">
+            <h2 class="mb-3">What does my BMI mean?</h2>
+            <p>The body mass index (BMI) is a measure that uses your height and weight to work out if your weight is healthy. The BMI calculation divides an adult's weight in kilograms by their height in metres squared.</p>
+        </section>
+
+        <section id="healthy-foods" class="card shadow p-4 mt-4">
+            <h2 class="mb-3">Healthy Foods</h2>
+            <p>Discover nutritious foods that can help you maintain a healthy weight and lifestyle. [Placeholder text about healthy foods]</p>
+        </section>
+
+        <section id="meal-plans" class="card shadow p-4 mt-4">
+            <h2 class="mb-3">Meal Plans</h2>
+            <p>Explore balanced meal plans designed to support your health goals. [Placeholder text about meal plans]</p>
+        </section>
+
+        <section id="workout-plans" class="card shadow p-4 mt-4">
+            <h2 class="mb-3">Workout Plans</h2>
+            <p>Find effective workout routines to complement your healthy eating habits. [Placeholder text about workout plans]</p>
+        </section>
+
+
+
+    </main>
 
   <script src="script.js"></script>
   <!-- <script
@@ -52,4 +62,3 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script> -->
-</html>

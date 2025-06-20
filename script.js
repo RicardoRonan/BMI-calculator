@@ -5,22 +5,33 @@ window.onload = () => {
 };
 
 function calculateBMI() {
-  let height = parseInt(document.querySelector("#height").value);
-
-  let weight = parseInt(document.querySelector("#weight").value);
-
+  let heightInput = document.querySelector("#height");
+  let weightInput = document.querySelector("#weight");
   let result = document.querySelector("#result");
 
-  if (height === "" || isNaN(height))
-    result.innerHTML = "Provide a valid Height!";
-  else if (weight === "" || isNaN(weight))
-    result.innerHTML = "Provide a valid Weight!";
-  else {
-    let bmi = (weight / ((height * height) / 10000)).toFixed(2);
+  let height = parseFloat(heightInput.value);
+  let weight = parseFloat(weightInput.value);
 
-    if (bmi < 18.6) result.innerHTML = `Under Weight : <span>${bmi}</span>`;
-    else if (bmi >= 18.6 && bmi < 24.9)
-      result.innerHTML = `Normal : <span>${bmi}</span>`;
-    else result.innerHTML = `Over Weight : <span>${bmi}</span>`;
+  if (isNaN(height) || height <= 0) {
+    result.innerHTML = "<span class=\"error\">Please provide a valid height!</span>";
+    return;
+  } else if (isNaN(weight) || weight <= 0) {
+    result.innerHTML = "<span class=\"error\">Please provide a valid weight!</span>";
+    return;
+  }
+  else {
+    let bmi = (weight / ((height / 100) * (height / 100))).toFixed(2); // Corrected BMI calculation
+
+    let weightClass = "";
+    if (bmi < 18.5) {
+      weightClass = "Underweight";
+    } else if (bmi >= 18.5 && bmi < 24.9) {
+      weightClass = "Normal weight";
+    } else if (bmi >= 25 && bmi < 29.9) {
+      weightClass = "Overweight";
+    } else {
+      weightClass = "Obese";
+    }
+    result.innerHTML = `BMI: <span>${bmi}</span><br>Weight Class: <span>${weightClass}</span>`;
   }
 }

@@ -6,38 +6,45 @@
 html,
 body {
   overflow-x: hidden;
-  background-color: rgb(13, 235, 135);
+  background-color: #f4f7f6; /* Light grey background */
+  font-family: 'Arial', sans-serif; /* Modern sans-serif font */
 }
 
 .container-fluid {
   display: flex !important;
   justify-content: center !important;
-  background-color: rgb(13, 235, 135);
+  padding: 20px;
 }
 #card {
-  width: 40rem;
+  width: 100%;
+  max-width: 500px; /* Limit card width on larger screens */
   height: fit-content;
-  border: 1px solid grey;
-  background-color: #00d497;
+  border: none; /* Remove default border */
+  background-color: #ffffff; /* White card background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  border-radius: 10px; /* Rounded corners */
+  padding: 30px;
 }
-#card-1 {
-  width: 20rem;
-  height: fit-content;
-  background-color: #00d497;
-  border: 1px solid grey;
-  word-break: break-all;
-}
-#card-body {
-  word-break: break-all;
-}
+
 input {
-  width: 35rem;
-  background-color: #00bc9d !important;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
 }
+
 #result {
   font-size: 3rem;
+  text-align: center;
+  margin-top: 20px;
+  color: #007bff; /* Blue color for result */
+  font-weight: bold;
 }
+
 .card {
+  /* Keep the existing card properties but adjust for modern look */
   --bs-card-spacer-y: 1rem;
   --bs-card-spacer-x: 1rem;
   --bs-card-title-spacer-y: 0.5rem;
@@ -51,7 +58,7 @@ input {
   --bs-card-cap-bg: rgba(0, 0, 0, 0.03);
   --bs-card-cap-color: ;
   --bs-card-height: ;
-  --bs-card-color: ;
+  --bs-card-color: #333; /* Darker text color */
   --bs-card-bg: #fff;
   --bs-card-img-overlay-padding: 1rem;
   --bs-card-group-margin: 0.75rem;
@@ -63,22 +70,42 @@ input {
   word-wrap: break-word;
   background-color: var(--bs-card-bg);
   background-clip: border-box;
-  border: var(--bs-card-border-width) solid var(--bs-card-border-color);
-  border-radius: var(--bs-card-border-radius);
+  border: none; /* Remove default border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
+
 .card-body {
-  padding: 10px;
+  padding: 20px; /* Increase padding */
 }
+
+/* Responsive adjustments */
 @media only screen and (max-width: 570px) {
   .container-fluid {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  #card-1 {
-    margin: 5px;
-    height: fit-content;
-  }
-  #card {
-    margin: 5px;
+    padding: 10px;
   }
 }
+
+/* Styling for new sections */
+.section {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee; /* Add a light border to separate sections */
+}
+
+.section h2 {
+  color: #333; /* Darker heading color */
+  margin-bottom: 15px;
+  border-bottom: 2px solid #007bff; /* Underline headings with a blue color */
+  display: inline-block; /* Make underline only as wide as text */
+  padding-bottom: 5px;
+}
+
+.section p {
+  color: #555; /* Slightly lighter paragraph text color */
+  line-height: 1.6; /* Improve readability with more line spacing */
+  margin-bottom: 15px;
+}
+
+
+
