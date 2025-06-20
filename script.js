@@ -27,7 +27,9 @@ window.onload = () => {
   let bmiSections = document.querySelectorAll('.bmi-section');
   let result = document.querySelector("#result");
   let shareBtn = document.getElementById('shareBMI');
+  let shareOptions = document.getElementById('share-options');
   if (shareBtn) shareBtn.style.display = 'none';
+  if (shareOptions) shareOptions.style.display = 'none';
 
   // Hide all BMI sections on load
   bmiSections.forEach(section => section.style.display = 'none');
@@ -55,24 +57,54 @@ window.onload = () => {
     if (shareBtn) shareBtn.style.display = 'none';
     if (calcAnimation) calcAnimation.style.display = 'none';
   });
+  // Share BMI button toggles share options only
   if (shareBtn) {
-    shareBtn.addEventListener('click', function() {
-      const text = result.innerText.replace(/\n/g, ' ');
-      if (navigator.share) {
-        navigator.share({
-          title: 'My BMI Result',
-          text: text,
-          url: window.location.href
-        });
-      } else if (navigator.clipboard) {
-        navigator.clipboard.writeText(text + ' ' + window.location.href);
-        shareBtn.innerText = 'Copied!';
-        setTimeout(() => { shareBtn.innerText = 'Share BMI'; }, 1500);
+    shareBtn.onclick = function(e) {
+      e.preventDefault();
+      if (shareOptions.style.display === 'none' || shareOptions.style.display === '') {
+        shareOptions.style.display = 'flex';
       } else {
-        alert('Copy this: ' + text + ' ' + window.location.href);
+        shareOptions.style.display = 'none';
       }
-    });
+    };
   }
+  // Hide share options on outside click
+  document.addEventListener('click', function(e) {
+    if (shareOptions && shareBtn && !shareOptions.contains(e.target) && e.target !== shareBtn) {
+      shareOptions.style.display = 'none';
+    }
+  });
+  // Social share handlers
+  function getShareText() {
+    const result = document.getElementById('result');
+    let text = result ? result.innerText.replace(/\n/g, ' ') : '';
+    return `Check out my BMI result: ${text} - ${window.location.href}`;
+  }
+  const twitterBtn = document.getElementById('share-twitter');
+  const facebookBtn = document.getElementById('share-facebook');
+  const whatsappBtn = document.getElementById('share-whatsapp');
+  const copyBtn = document.getElementById('share-copy');
+  if (twitterBtn) twitterBtn.onclick = function() {
+    const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(getShareText())}`;
+    window.open(url, '_blank');
+    shareOptions.style.display = 'none';
+  };
+  if (facebookBtn) facebookBtn.onclick = function() {
+    const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=${encodeURIComponent(getShareText())}`;
+    window.open(url, '_blank');
+    shareOptions.style.display = 'none';
+  };
+  if (whatsappBtn) whatsappBtn.onclick = function() {
+    const url = `https://wa.me/?text=${encodeURIComponent(getShareText())}`;
+    window.open(url, '_blank');
+    shareOptions.style.display = 'none';
+  };
+  if (copyBtn) copyBtn.onclick = function() {
+    navigator.clipboard.writeText(getShareText());
+    copyBtn.innerText = 'Copied!';
+    setTimeout(() => { copyBtn.innerText = 'Copy Link'; }, 1500);
+    shareOptions.style.display = 'none';
+  };
 
   // Lottie scale animation on homepage
   if (window.lottie && document.getElementById('lottie-scale')) {
@@ -148,5 +180,6 @@ function calculateBMI() {
     let section = document.getElementById(sectionId);
     if (section) section.style.display = '';
     if (shareBtn) shareBtn.style.display = '';
+    if (shareOptions) shareOptions.style.display = 'none';
   }
 }
