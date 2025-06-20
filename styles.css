@@ -1,3 +1,67 @@
+/* FLAT MODERN DESIGN UPDATE */
+:root {
+  --color-bg: #f7fafc;
+  --color-bg-card: #fff;
+  --color-bg-section: #f9fbfd;
+  --color-border: #e3e8ee;
+  --color-border-hover: #b6c2d1;
+  --color-border-section: #e3e8ee;
+  --color-border-focus: #7abaff;
+  --color-border-dark: #2d3748;
+  --color-primary: #4f8cff;
+  --color-primary-dark: #2563eb;
+  --color-secondary: #e3e8ee;
+  --color-secondary-dark: #cbd5e1;
+  --color-text: #2d3a4a;
+  --color-text-light: #3a3a3a;
+  --color-text-muted: #b6c2d1;
+  --color-success: #22c55e;
+  --color-warning: #facc15;
+  --color-danger: #dc3545;
+  --color-danger-bright: #ff6b6b;
+  --color-info: #7abaff;
+  --color-bg-dark: #181f2a;
+  --color-bg-card-dark: #232b3a;
+  --color-bg-input-dark: #1a2233;
+  --color-border-darkmode: #2d3748;
+  --color-text-dark: #e3e8ee;
+  --color-section-h2-dark: #7abaff;
+  --color-section-h2-border-dark: #4f8cff;
+  --radius: 14px;
+  --radius-small: 7px;
+  --radius-section: 12px;
+  --padding-card: 32px 28px;
+  --padding-card-mobile: 18px 8px;
+  --padding-container: 0 16px;
+  --padding-container-mobile: 0 4px;
+  --padding-result: 12px 0;
+  --padding-result-mobile: 8px 0;
+  --font-main: 'Segoe UI', Arial, sans-serif;
+
+  /* DARK MODE COLORS */
+  --dm-bg: #181f2a;
+  --dm-bg-card: #232b3a;
+  --dm-bg-section: #232b3a;
+  --dm-bg-input: #1a2233;
+  --dm-border: #2d3748;
+  --dm-border-hover: #4f8cff;
+  --dm-border-section: #2d3748;
+  --dm-border-focus: #4f8cff;
+  --dm-primary: #4f8cff;
+  --dm-primary-dark: #2563eb;
+  --dm-secondary: #2d3748;
+  --dm-secondary-dark: #4f8cff;
+  --dm-text: #e3e8ee;
+  --dm-text-light: #b6c2d1;
+  --dm-text-muted: #b6c2d1;
+  --dm-success: #22c55e;
+  --dm-warning: #facc15;
+  --dm-danger: #ff6b6b;
+  --dm-info: #7abaff;
+  --dm-section-h2: #7abaff;
+  --dm-section-h2-border: #4f8cff;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -6,105 +70,354 @@
 html,
 body {
   overflow-x: hidden;
-  background-color: #f4f7f6; /* Light grey background */
-  font-family: 'Arial', sans-serif; /* Modern sans-serif font */
+  background-color: var(--color-bg);
+  font-family: var(--font-main);
 }
 
-.container-fluid {
-  display: flex !important;
-  justify-content: center !important;
-  padding: 20px;
-}
-#card {
-  width: 100%;
-  max-width: 500px; /* Limit card width on larger screens */
-  height: fit-content;
-  border: none; /* Remove default border */
-  background-color: #ffffff; /* White card background */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-  border-radius: 10px; /* Rounded corners */
-  padding: 30px;
-}
-
-input {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-
-#result {
-  font-size: 3rem;
-  text-align: center;
-  margin-top: 20px;
-  color: #007bff; /* Blue color for result */
-  font-weight: bold;
+.container {
+  max-width: 75vw;
+  margin: 40px auto;
+  padding: var(--padding-container);
 }
 
 .card {
-  /* Keep the existing card properties but adjust for modern look */
-  --bs-card-spacer-y: 1rem;
-  --bs-card-spacer-x: 1rem;
-  --bs-card-title-spacer-y: 0.5rem;
-  --bs-card-border-width: 1px;
-  --bs-card-border-color: var(--bs-border-color-translucent);
-  --bs-card-border-radius: 0 !important;
-  --bs-card-box-shadow: ;
-  --bs-card-inner-border-radius: calc(0.375rem - 1px);
-  --bs-card-cap-padding-y: 0.5rem;
-  --bs-card-cap-padding-x: 1rem;
-  --bs-card-cap-bg: rgba(0, 0, 0, 0.03);
-  --bs-card-cap-color: ;
-  --bs-card-height: ;
-  --bs-card-color: #333; /* Darker text color */
-  --bs-card-bg: #fff;
-  --bs-card-img-overlay-padding: 1rem;
-  --bs-card-group-margin: 0.75rem;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  height: var(--bs-card-height);
-  word-wrap: break-word;
-  background-color: var(--bs-card-bg);
-  background-clip: border-box;
-  border: none; /* Remove default border */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: none !important;
+  padding: var(--padding-card);
+  margin-bottom: 24px;
+  transition: border-color 0.2s;
+}
+.card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: none !important;
 }
 
-.card-body {
-  padding: 20px; /* Increase padding */
+input[type="number"],
+input[type="text"],
+.form-control {
+  width: 100%;
+  padding: 14px 12px;
+  margin-bottom: 18px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-small);
+  background: var(--color-bg);
+  font-size: 1.08rem;
+  transition: border-color 0.2s;
+  box-shadow: none !important;
+}
+input:focus {
+  border-color: var(--color-border-focus);
+  outline: none;
+  background: var(--color-bg-card);
+  box-shadow: none !important;
 }
 
-/* Responsive adjustments */
+label.form-label {
+  font-weight: 500;
+  color: var(--color-text-light);
+  margin-bottom: 6px;
+}
+
+#btn, #reset, #shareBMI {
+  margin-bottom: 10px;
+  border: none;
+  border-radius: var(--radius-small);
+  padding: 13px 0;
+  font-size: 1.08rem;
+  font-weight: 600;
+  background: var(--color-secondary);
+  color: var(--color-text);
+  transition: background 0.2s, color 0.2s;
+  box-shadow: none !important;
+}
+#btn {
+  background: var(--color-primary);
+  color: #fff;
+}
+#btn:hover {
+  background: var(--color-primary-dark);
+  box-shadow: none !important;
+}
+#reset:hover {
+  background: var(--color-secondary-dark);
+  color: #1e293b;
+  box-shadow: none !important;
+}
+#shareBMI {
+  background: var(--color-bg-card);
+  color: var(--color-primary-dark);
+  border: 1.5px solid var(--color-primary);
+}
+#shareBMI:hover {
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: none !important;
+}
+
+#error, .error {
+  color: var(--color-danger);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+#result.fw-bold.fs-3 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.bmi-section {
+  border: 1.5px solid var(--color-border-section);
+  border-radius: var(--radius-section);
+  background: var(--color-bg-section);
+  margin-bottom: 24px;
+  box-shadow: none !important;
+}
+
+.bmi-section h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  border-bottom: 1.5px solid var(--color-border-section);
+  padding-bottom: 6px;
+  display: inline-block;
+}
+.bmi-section h4 {
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin-top: 18px;
+  color: var(--color-primary-dark);
+}
+.bmi-section ul {
+  margin-bottom: 0;
+  padding-left: 20px;
+}
+.bmi-section li {
+  margin-bottom: 6px;
+  color: var(--color-text-light);
+}
+
+#result {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 20px;
+  color: var(--color-primary-dark);
+  font-weight: bold;
+  background: var(--color-bg);
+  border-radius: 8px;
+  padding: var(--padding-result);
+  border: 1.5px solid var(--color-border);
+  box-shadow: none !important;
+}
+
 @media only screen and (max-width: 570px) {
-  .container-fluid {
-    padding: 10px;
+  .container {
+    padding: var(--padding-container-mobile);
+  }
+  .card, .bmi-section {
+    padding: var(--padding-card-mobile);
+  }
+  #result {
+    font-size: 1.2rem;
+    padding: var(--padding-result-mobile);
   }
 }
 
-/* Styling for new sections */
-.section {
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px solid #eee; /* Add a light border to separate sections */
+/* DARK MODE */
+.dark-mode {
+  background-color: var(--dm-bg) !important;
+  color: var(--dm-text) !important;
+}
+.dark-mode,
+.dark-mode .card,
+.dark-mode .bmi-section {
+  background: var(--dm-bg-card) !important;
+  border-color: var(--dm-border) !important;
+  color: var(--dm-text) !important;
+  box-shadow: none !important;
+}
+.dark-mode .container {
+  background: var(--dm-bg-card) !important;
+}
+.dark-mode .card:hover,
+.dark-mode .bmi-section:hover {
+  border-color: var(--dm-border-hover) !important;
+  box-shadow: none !important;
+}
+.dark-mode input[type="number"],
+.dark-mode input[type="text"],
+.dark-mode .form-control {
+  background: var(--dm-bg-input) !important;
+  color: var(--dm-text) !important;
+  border-color: var(--dm-border) !important;
+  box-shadow: none !important;
+}
+.dark-mode input:focus {
+  background: var(--dm-bg-card) !important;
+  border-color: var(--dm-border-focus) !important;
+  box-shadow: none !important;
+}
+.dark-mode label.form-label {
+  color: var(--dm-text-light) !important;
+}
+.dark-mode #btn {
+  background: var(--dm-primary) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+.dark-mode #btn:hover {
+  background: var(--dm-primary-dark) !important;
+  box-shadow: none !important;
+}
+.dark-mode #reset {
+  background: var(--dm-secondary) !important;
+  color: var(--dm-text) !important;
+  box-shadow: none !important;
+}
+.dark-mode #reset:hover {
+  background: var(--dm-secondary-dark) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+.dark-mode #shareBMI {
+  background: var(--dm-bg-card) !important;
+  color: var(--dm-primary) !important;
+  border: 1.5px solid var(--dm-primary) !important;
+  box-shadow: none !important;
+}
+.dark-mode #shareBMI:hover {
+  background: var(--dm-primary) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+.dark-mode #result {
+  background: var(--dm-bg-input) !important;
+  color: var(--dm-info) !important;
+  border-color: var(--dm-border) !important;
+  box-shadow: none !important;
+}
+.dark-mode .bmi-section h2,
+.dark-mode .bmi-section h4 {
+  color: var(--dm-section-h2) !important;
+  border-bottom-color: var(--dm-section-h2-border) !important;
+}
+.dark-mode .bmi-section li {
+  color: var(--dm-text) !important;
+}
+.dark-mode .error {
+  color: var(--dm-danger) !important;
 }
 
-.section h2 {
-  color: #333; /* Darker heading color */
-  margin-bottom: 15px;
-  border-bottom: 2px solid #007bff; /* Underline headings with a blue color */
-  display: inline-block; /* Make underline only as wide as text */
-  padding-bottom: 5px;
+/* --- Enhanced Navbar Styles --- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 1000;
+  transition: background 0.3s, box-shadow 0.3s, border-radius 0.3s, width 0.3s;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+.navbar-content {
+  background: var(--color-bg-card);
+  border-radius: 18px;
+  border: 1.5px solid var(--color-border);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  max-width: 1100px;
+  width: 92vw;
+  margin: 12px 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 70px;
+  pointer-events: all;
+  transition: box-shadow 0.3s, border-radius 0.3s, width 0.3s, max-width 0.3s;
 }
 
-.section p {
-  color: #555; /* Slightly lighter paragraph text color */
-  line-height: 1.6; /* Improve readability with more line spacing */
-  margin-bottom: 15px;
+.navbar.scrolled .navbar-content {
+  box-shadow: 0 6px 32px rgba(0,0,0,0.13);
+  border-radius: 32px;
+  max-width: 800px;
+  width: 80vw;
+  margin-top: 18px;
+}
+
+.navbar-logo {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  letter-spacing: 0.5px;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+.navbar-links li {
+  display: inline-block;
+}
+.navbar-links a {
+  text-decoration: none;
+  color: var(--color-text-light);
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.navbar-links a.active {
+  color: var(--color-primary-dark);
+  border-bottom: 2px solid var(--color-primary-dark);
+}
+.navbar-links a.disabled {
+  color: #b6c2d1;
+  pointer-events: none;
+  opacity: 0.6;
+}
+.navbar-links a:hover:not(.active):not(.disabled) {
+  color: var(--color-primary-dark);
+  border-bottom: 2px solid var(--color-primary-dark);
+}
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Dark mode for navbar popout */
+.dark-mode .navbar-content {
+  background: var(--dm-bg-card);
+  border: 1.5px solid var(--dm-border);
+  box-shadow: 0 2px 16px rgba(30,41,59,0.18);
+}
+.dark-mode .navbar.scrolled .navbar-content {
+  box-shadow: 0 6px 32px rgba(30,41,59,0.28);
+}
+
+@media (max-width: 800px) {
+  .navbar-content {
+    padding: 0 10px;
+    width: 98vw;
+    max-width: 99vw;
+  }
+  .navbar.scrolled .navbar-content {
+    max-width: 98vw;
+    width: 98vw;
+  }
+}
+
+/* Ensure main content is not hidden behind navbar */
+main.container {
+  margin-top: 90px !important;
 }
 
 
